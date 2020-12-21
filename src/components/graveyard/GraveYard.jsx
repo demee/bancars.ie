@@ -13,7 +13,7 @@ export default class GraveYard extends React.Component {
         return (<div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>Deaths on the Irish roads in 2019</h2>
+                    <h2>Deaths on the Irish roads in {this.props.year}</h2>
                 </div>
             </div>
             <div class="row">
