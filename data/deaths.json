@@ -1,0 +1,62 @@
+{
+    "data": {
+        "deaths": [
+            {
+                "year": 2020,
+                "deaths": 143
+            },
+            {
+                "year": 2019,
+                "deaths": 141
+            },
+            {
+                "year": 2018,
+                "deaths": 140
+            },
+            {
+                "year": 2017,
+                "deaths": 156
+            },
+            {
+                "year": 2016,
+                "deaths": 185
+            }, 
+            {
+                "year": 2015,
+                "deaths": 162
+            }, 
+            {
+                "year": 2014,
+                "deaths": 193
+            }, 
+            {
+                "year": 2013,
+                "deaths": 188
+            },
+            {
+                "year": 2012,
+                "deaths": 162
+            },
+            {
+                "year": 2011,
+                "deaths": 186
+            }, 
+            {
+                "year": 2010,
+                "deaths": 212
+            }, 
+            {
+                "year": 2009,
+                "deaths": 238
+            }, 
+            {
+                "year": 2008,
+                "deaths": 279
+            },
+            {
+                "year": 2007,
+                "deaths": 338
+            }
+        ]
+    }
+}
