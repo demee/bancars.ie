@@ -1,6 +1,6 @@
 # Edit
 
-[Edit](https://gitpod.ie#)
+[Edit](https://gitpod.ie#https://github.com/demee/bancars.ie)
 
 # Getting Started with Create React App
 
