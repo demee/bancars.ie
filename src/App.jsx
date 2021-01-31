@@ -1,11 +1,10 @@
 import './App.css';
-import Cementary from './components/cementary/Cementary'
+import Chart from './components/chart/Chart'
 
 function App() {
   return (
     <div className="App">      
-      <Cementary></Cementary>
-      <a href="https://www.garda.ie/en/roads-policing/statistics/">source</a>
+        <Chart></Chart>
     </div>
   );
 }
