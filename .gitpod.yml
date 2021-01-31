@@ -1,4 +1,5 @@
 github:
+  image: node:alpine
   prebuilds:
     # enable for the master/default branch (defaults to true)
     master: true
