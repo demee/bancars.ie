@@ -7,7 +7,7 @@ export default class Counter extends React.Component {
     constructor(props) {
         super(props)
         this.targetDate = DateTime.fromObject({ year: 2021, month: 12, day: 31 });
-        this.targetCount = 3100000;
+        this.targetCount = 2805839 + 88000 + 100000;
         this.startDate = DateTime.fromObject({ year: 2019, month: 12, day: 31 });
         this.startCount = 2805839;
         this.state = {
@@ -44,8 +44,7 @@ export default class Counter extends React.Component {
                 <text x="0" y="15" style={{ fontFamily: 'Yusei Magic' }} >{this.state.count}</text>
                 
             </svg>
-                <h2>cars on irish roads</h2>   
-                <h2>that is too many, #bancars</h2>         
+                <h2>too many cars on irish roads, #bancars</h2>         
         </div>)
     }
 }
