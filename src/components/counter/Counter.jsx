@@ -44,7 +44,8 @@ export default class Counter extends React.Component {
                 <text x="0" y="15" style={{ fontFamily: 'Yusei Magic' }} >{this.state.count}</text>
                 
             </svg>
-                <h2>cars on irish roads</h2>            
+                <h2>cars on irish roads</h2>   
+                <h2>that is too many, #bancars</h2>         
         </div>)
     }
 }
