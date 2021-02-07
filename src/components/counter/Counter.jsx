@@ -1,5 +1,6 @@
 import React from 'react';
 import { DateTime, Interval } from 'luxon';
+import NumberFormat from 'react-number-format';
 
 import './Counter.css';
 
@@ -35,13 +36,15 @@ export default class Counter extends React.Component {
     render() {
         return (<div>
             <h2>There are</h2>
-            <svg viewBox="0 0 63  18">
+            <svg viewBox="0 0 75 18">
                 <defs>
                     <style type="text/css">
                         @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic');
                     </style>
                 </defs>
-                <text x="0" y="15" style={{ fontFamily: 'Yusei Magic' }} >{this.state.count}</text>
+                <text x="1" y="15" style={{ fontFamily: 'Yusei Magic' }} >
+                    <NumberFormat value={this.state.count}  displayType={'text'} thousandSeparator={true} renderText={value => value}/>
+                </text>
                 
             </svg>
                 <h2>cars too many on irish roads, #bancars</h2>         
