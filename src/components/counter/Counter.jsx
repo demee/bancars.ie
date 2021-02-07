@@ -11,13 +11,11 @@ export default class Counter extends React.Component {
         this.targetCount = 2805839 + 88000 + 100000;
         this.startDate = DateTime.fromObject({ year: 2019, month: 12, day: 31 });
         this.startCount = 2805839;
-        this.state = {
-            count: 0
-        };
-        this.style = "font-family: 'Roboto';";
-        this.recalculate()
+        this.state = {};
+        this.style = "font-family: 'Roboto';";    
     }
-    recalculate() {
+    tick() {
+        console.log('tick')
         let int = Interval.fromDateTimes(this.startDate, this.targetDate).count('seconds');
 
         let diff = this.targetCount - this.startCount;
@@ -25,27 +23,36 @@ export default class Counter extends React.Component {
         let todayInt = Interval.fromDateTimes(this.startDate, DateTime.local()).count('seconds');
 
         this.setState({
-            count: this.startCount + Math.round((todayInt / int) * diff)
+            barWidth: ((todayInt/int * diff) % 1) * 100,
+            count: this.startCount + Math.floor((todayInt / int) * diff)
         });
-        setTimeout(() => {
-            console.log('recalculating')
-            this.recalculate()
-        }, 1000)
+    }
+
+    componentDidMount() {
+        this.intervalID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalID);
     }
 
     render() {
         return (<div>
             <h2>There are</h2>
-            <svg viewBox="0 0 75 18">
+            <svg viewBox="0 0 100 25">
                 <defs>
                     <style type="text/css">
                         @import url('https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic');
                     </style>
                 </defs>
-                <text x="1" y="15" style={{ fontFamily: 'Yusei Magic' }} >
+                <text x="5" y="17" style={{ fontFamily: 'Yusei Magic', fontSize: '20px'}} >
                     <NumberFormat value={this.state.count}  displayType={'text'} thousandSeparator={true} renderText={value => value}/>
                 </text>
-                
+                <rect x={100 - this.state.barWidth} y="20" width={this.state.barWidth} height="2"></rect>
+                <text x={100 - this.state.barWidth - 2} y="22" style={{fontSize: '3px'}}>🚗</text>
             </svg>
                 <h2>cars too many on irish roads, #bancars</h2>         
         </div>)
