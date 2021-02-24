@@ -53,8 +53,9 @@ export default class Counter extends React.Component {
                 </text>
                 <rect x={100 - this.state.barWidth} y="20" width={this.state.barWidth} height="2"></rect>
                 <text x={100 - this.state.barWidth - 2} y="22" style={{fontSize: '3px'}}>🚗</text>
+                <text x={100 - this.state.barWidth + 2} y="21.5" style={{fontSize: '2px', fill: '#fff'}}>a new one is coming... brum brum</text>
             </svg>
-                <h2>cars too many on irish roads, #bancars</h2>         
+            <h2>cars too many on irish roads, #bancars</h2>         
         </div>)
     }
 }
