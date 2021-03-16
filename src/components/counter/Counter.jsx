@@ -6,29 +6,34 @@ import './Counter.css';
 
 export default class Counter extends React.Component {
     constructor(props) {
-        super(props)
-        this.targetDate = DateTime.fromObject({ year: 2021, month: 12, day: 31 });
-        this.targetCount = 2805839 + 88000 + 100000;
-        this.startDate = DateTime.fromObject({ year: 2019, month: 12, day: 31 });
-        this.startCount = 2805839;
-        this.state = {};
-        this.style = "font-family: 'Roboto';";    
+        super(props)    
+        this.state = {
+            barWidth: 0
+        };
+        this.style = "font-family: 'Roboto';";   
+         
     }
     tick() {
-        console.log('tick')
-        let int = Interval.fromDateTimes(this.startDate, this.targetDate).count('seconds');
+        console.log(".")
 
-        let diff = this.targetCount - this.startCount;
+        let int = Interval.fromDateTimes(this.props.startDate, this.props.targetDate).count('seconds');
 
-        let todayInt = Interval.fromDateTimes(this.startDate, DateTime.local()).count('seconds');
+        if (int.invalid) {
+          throw new Error(int.invalid);
+        }
+
+        let diff = this.props.targetCount - this.props.startCount;
+
+        let todayInt = Interval.fromDateTimes(this.props.startDate, DateTime.local()).count('seconds');
 
         this.setState({
             barWidth: ((todayInt/int * diff) % 1) * 100,
-            count: this.startCount + Math.floor((todayInt / int) * diff)
+            count: this.props.startCount + Math.floor((todayInt / int) * diff)
         });
     }
 
     componentDidMount() {
+        this.tick();
         this.intervalID = setInterval(
             () => this.tick(),
             1000
