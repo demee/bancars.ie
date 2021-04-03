@@ -1,5 +1,5 @@
+image: node:alpine#15.13.0-alpine3.13
 github:
-  image: node:alpine#15.13.0-alpine3.13
   prebuilds:
     # enable for the master/default branch (defaults to true)
     master: true
