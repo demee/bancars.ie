@@ -8,7 +8,7 @@ export default class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      barWidth: 0
+      barWidth: 0,
     };
     this.style = 'font-family: \'Roboto\';';
 
@@ -16,19 +16,19 @@ export default class Counter extends React.Component {
   tick() {
     console.log('.');
 
-    let int = Interval.fromDateTimes(this.props.startDate, this.props.targetDate).count('seconds');
+    const int = Interval.fromDateTimes(this.props.startDate, this.props.targetDate).count('seconds');
 
     if (int.invalid) {
       throw new Error(int.invalid);
     }
 
-    let diff = this.props.targetCount - this.props.startCount;
+    const diff = this.props.targetCount - this.props.startCount;
 
-    let todayInt = Interval.fromDateTimes(this.props.startDate, DateTime.local()).count('seconds');
+    const todayInt = Interval.fromDateTimes(this.props.startDate, DateTime.local()).count('seconds');
 
     this.setState({
       barWidth: ((todayInt / int * diff) % 1) * 100,
-      count: this.props.startCount + Math.floor((todayInt / int) * diff)
+      count: this.props.startCount + Math.floor((todayInt / int) * diff),
     });
   }
 
@@ -36,7 +36,7 @@ export default class Counter extends React.Component {
     this.tick();
     this.intervalID = setInterval(
       () => this.tick(),
-      1000
+      1000,
     );
   }
 
