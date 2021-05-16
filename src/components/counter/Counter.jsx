@@ -17,6 +17,7 @@ export default class Counter extends React.Component {
       'pollute the air',
       'increase congestion',
       'make more noise',
+      'kill more people',
     ];
   }
 
