@@ -18,19 +18,21 @@ export default class Chart extends React.Component {
   }
 
   renderXAxis() {
-    return <g transform={this.state.translateXAxis} />;
+    const { translateXAxis } = this.state;
+    return <g transform={translateXAxis} />;
   }
 
   renderYAxis() {
-    return <text>Yaxis</text>;
+    const { text } = this.state; // this does not really exists
+    return <text>{text}</text>;
   }
 
   render() {
     const XAxis = this.renderXAxis();
     const Yaxis = this.renderYAxis();
-
+    const { viewBox } = this.state;
     return (
-      <svg viewBox={this.state.viewBox}>
+      <svg viewBox={viewBox}>
         {XAxis}
         {Yaxis}
       </svg>
