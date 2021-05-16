@@ -12,6 +12,12 @@ export default class Counter extends React.Component {
       barWidth: 0,
     };
     this.style = 'font-family: \'Roboto\';';
+    this.reasons = [
+      'steal children independence',
+      'pollute the air',
+      'increase congestion',
+      'make more noise',
+    ];
   }
 
   componentDidMount() {
@@ -49,6 +55,7 @@ export default class Counter extends React.Component {
 
   render() {
     const { count, barWidth } = this.state;
+    const r = `a new one is coming to ${this.reasons[Math.floor(Math.random() * this.reasons.length)]}`;
     return (
       <div>
         <h2>There are</h2>
@@ -61,18 +68,10 @@ export default class Counter extends React.Component {
           <text x="5" y="17" style={{ fontFamily: 'Yusei Magic', fontSize: '20px' }}>
             <NumberFormat value={count} displayType="text" thousandSeparator renderText={(value) => value} />
           </text>
-          <text
-            x="93"
-            y="10"
-            style={{
-              cursor: 'pointer', fill: 'blue', fontFamily: 'Yusei Magic', fontSize: '10px', fontStyle: 'underscore',
-            }}
-          >
-            *
-          </text>
+
           <rect x={100 - barWidth} y="20" width={barWidth} height="2" />
           <text x={100 - barWidth - 2} y="22" style={{ fontSize: '3px' }}>🚗</text>
-          <text x={100 - barWidth + 2} y="21.5" style={{ fontSize: '2px', fill: '#fff' }}>a new one is coming... brum brum</text>
+          <text x={100 - barWidth + 2} y="21.5" style={{ fontSize: '2px', fill: '#fff' }}>{r}</text>
         </svg>
         <h2>cars too many on irish roads, #bancars</h2>
         <span style={{ float: 'left', marginLeft: '10px' }}>* - estimated</span>
