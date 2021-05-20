@@ -5,6 +5,8 @@ import NumberFormat from 'react-number-format';
 
 import './Counter.css';
 
+let reloadReason = 10;
+let reasonNo = 0;
 export default class Counter extends React.Component {
   constructor(props) {
     super(props);
@@ -53,15 +55,23 @@ export default class Counter extends React.Component {
 
     const todayInt = Interval.fromDateTimes(startDate, DateTime.local()).count('seconds');
 
+    if (!reloadReason) {
+      reasonNo = Math.floor(Math.random() * this.reasons.length);
+      reloadReason = 10;
+    } else {
+      reloadReason -= 1;
+    }
+
     this.setState({
+      reason: this.reasons[reasonNo],
       barWidth: (((todayInt / int) * diff) % 1) * 100,
       count: startCount + Math.floor((todayInt / int) * diff),
     });
   }
 
   render() {
-    const { count, barWidth } = this.state;
-    const r = `a new one is coming to ${this.reasons[Math.floor(Math.random() * this.reasons.length)]}`;
+    const { count, barWidth, reason } = this.state;
+    const r = `a new one is coming to ${reason}`;
     return (
       <div>
         <h2>There are</h2>
@@ -73,6 +83,7 @@ export default class Counter extends React.Component {
           </defs>
           <text x="5" y="17" style={{ fontFamily: 'Yusei Magic', fontSize: '20px' }}>
             <NumberFormat value={count} displayType="text" thousandSeparator renderText={(value) => value} />
+            *
           </text>
 
           <rect x={100 - barWidth} y="20" width={barWidth} height="2" />
