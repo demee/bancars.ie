@@ -20,6 +20,7 @@ export default class Counter extends React.Component {
       'kill more people',
       'make poeple sick',
       'make cities noisy',
+      'erode local community connections',
     ];
   }
 
