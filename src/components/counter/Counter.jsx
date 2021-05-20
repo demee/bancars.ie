@@ -18,9 +18,11 @@ export default class Counter extends React.Component {
       'increase congestion',
       'make more noise',
       'kill more people',
+      'kill more children',
       'make poeple sick',
       'make cities noisy',
       'erode local community connections',
+      'terrorize pedestrians',
     ];
   }
 
