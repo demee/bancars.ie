@@ -16,8 +16,11 @@ function App() {
         startCount={carCountStart}
         targetCount={carCountTarget}
       />
-      <footer>
-         <p>This page uses cookies to analyze traffic <button>Ok I do not care</button></p>
+      <footer className="footer">
+        <p>
+          This page uses cookies to analyze traffic&nbsp;
+          <button type="button">Ok I do not care</button>
+        </p>
       </footer>
     </div>
   );
