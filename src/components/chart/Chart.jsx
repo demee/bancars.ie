@@ -32,7 +32,7 @@ export default class Chart extends React.Component {
     const Yaxis = this.renderYAxis();
     const { viewBox } = this.state;
     return (
-      <svg viewBox={viewBox}>
+      <svg viewBox={viewBox} data-testid="custom-element">
         {XAxis}
         {Yaxis}
       </svg>

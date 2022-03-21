@@ -23,6 +23,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
+    "lint": "eslint",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
