@@ -4,11 +4,10 @@ import Tagcloud from './components/tagcloud/Tagcloud';
 import Counters from './pages/Counters';
 
 function App() {
-
   return (
     <div className="App">
-      <Counters></Counters>
-      <Tagcloud></Tagcloud>
+      <Counters />
+      <Tagcloud />
       <footer className="footer">
         <p>
           This page uses cookies to analyze traffic&nbsp;
