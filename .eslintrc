@@ -1,11 +1,12 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest/globals": true
     },
     "extends": [
       "plugin:jest/all",
-      "plugin:react/recommended",
+      "plugin:react/all",
       "airbnb"
     ],
     "parserOptions": {
