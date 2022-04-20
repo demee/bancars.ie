@@ -13,7 +13,7 @@ export default function Tagcloud() {
   const layout = d3cloud()
     .size([500, 500])
     .words(words);
-  console.log(layout);
+  // console.log(layout);
 
   return (
     <svg>
