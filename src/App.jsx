@@ -7,11 +7,10 @@ function App() {
   return (
     <div className="App">
       <Counters />
-      <Tagcloud />
+      
       <footer className="footer">
         <p>
-          This page uses cookies to analyze traffic&nbsp;
-          <button type="button">Ok I do not care</button>
+          &nbsp; This page uses cookies to analyze traffic
         </p>
       </footer>
     </div>

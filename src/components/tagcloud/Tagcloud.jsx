@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import d3cloud from 'd3-cloud';
 
 export default function Tagcloud() {
-  const words = [{
+  const [words, setWords] = useState([]);
+  const width = 500;
+  const height = 500;
+  const wordsData = [{
     text: 'Cars',
     size: 100,
   },
@@ -11,13 +14,14 @@ export default function Tagcloud() {
     size: 30,
   }];
   const layout = d3cloud()
-    .size([500, 500])
-    .words(words);
-  // console.log(layout);
+    .size([width, height])
+    .words(wordsData)
+    .on('end', () => setWords(layout.words()))
+    .start();
 
   return (
-    <svg>
-      {layout.words().map((w) => <text key={w.text}>w.text</text>)}
+    <svg width={width} height={height}>
+      {words.map((w) => <text key={w.text}>{w.text}</text>)}
     </svg>
   );
 }
