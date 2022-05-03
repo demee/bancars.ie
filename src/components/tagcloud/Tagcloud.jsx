@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import WordCloud from 'react-d3-cloud';
+import { scaleOrdinal } from 'd3-scale';
+import { schemeCategory10 } from 'd3-scale-chromatic';
 
 export default function Tagcloud() {
   const [width, height] = [700, 400];
@@ -10,6 +12,8 @@ export default function Tagcloud() {
     setWords(await wordDataResponse.json());
   }, []);
 
+  const schemeCategory10ScaleOrdinal = scaleOrdinal(schemeCategory10);
+
   return (
     <WordCloud
       width={width}
@@ -18,9 +22,20 @@ export default function Tagcloud() {
       font="Arial"
       fontSize={(word) => Math.log2(word.value) * 5}
       spiral="rectangular"
+      fill={(d, i) => schemeCategory10ScaleOrdinal(i)}
       rotate={0}
       padding={5}
       random={() => 0}
+      onWordMouseOver={(event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.style.cursor = 'pointer';
+        // eslint-disable-next-line no-param-reassign
+        event.target.style.fontWeight = 'bold';
+      }}
+      onWordMouseOut={(event) => {
+        // eslint-disable-next-line no-param-reassign
+        event.target.style.fontWeight = 'normal';
+      }}
     />
   );
 }
