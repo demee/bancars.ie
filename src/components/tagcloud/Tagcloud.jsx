@@ -25,15 +25,6 @@ export default function Tagcloud() {
       fill={(d, i) => schemeCategory10ScaleOrdinal(i)}
       rotate={0}
       padding={5}
-      onWordClick={(event, d) => {
-        console.log(`onWordClick: ${d.text}`);
-      }}
-      onWordMouseOver={(event, d) => {
-        console.log(`onWordMouseOver: ${d.text}`);
-      }}
-      onWordMouseOut={(event, d) => {
-        console.log(`onWordMouseOut: ${d.text}`);
-      }}
     />
   );
 }
