@@ -1,27 +1,39 @@
-import React, { useState } from 'react';
-import d3cloud from 'd3-cloud';
+import React, { useEffect, useState } from 'react';
+import WordCloud from 'react-d3-cloud';
+import { scaleOrdinal } from 'd3-scale';
+import { schemeCategory10 } from 'd3-scale-chromatic';
 
 export default function Tagcloud() {
+  const [width, height] = [700, 400];
   const [words, setWords] = useState([]);
-  const width = 500;
-  const height = 500;
-  const wordsData = [{
-    text: 'Cars',
-    size: 100,
-  },
-  {
-    text: 'Pollution',
-    size: 30,
-  }];
-  const layout = d3cloud()
-    .size([width, height])
-    .words(wordsData)
-    .on('end', () => setWords(layout.words()))
-    .start();
+
+  useEffect(async () => {
+    const wordDataResponse = await fetch('data/words.json');
+    setWords(await wordDataResponse.json());
+  }, []);
+
+  const schemeCategory10ScaleOrdinal = scaleOrdinal(schemeCategory10);
 
   return (
-    <svg width={width} height={height}>
-      {words.map((w) => <text key={w.text}>{w.text}</text>)}
-    </svg>
+    <WordCloud
+      width={width}
+      height={height}
+      data={words}
+      font="Arial"
+      fontSize={(word) => Math.log2(word.value) * 5}
+      spiral="rectangular"
+      fill={(d, i) => schemeCategory10ScaleOrdinal(i)}
+      rotate={0}
+      padding={5}
+      onWordClick={(event, d) => {
+        console.log(`onWordClick: ${d.text}`);
+      }}
+      onWordMouseOver={(event, d) => {
+        console.log(`onWordMouseOver: ${d.text}`);
+      }}
+      onWordMouseOut={(event, d) => {
+        console.log(`onWordMouseOut: ${d.text}`);
+      }}
+    />
   );
 }

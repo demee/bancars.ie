@@ -1,0 +1,79 @@
+[
+    {
+        "text": "Cars",
+        "value": 10000
+    },
+    {
+        "text": "Pollution",
+        "value": 300
+    }, 
+    {
+        "text": "Ugly",
+        "value": 100
+    },
+    {
+        "text": "Death",
+        "value": 400
+    },
+    {
+        "text": "Traffic",
+        "value": 500
+    },
+    {
+        "text": "Kids",
+        "value": 500
+    },
+    {
+        "text": "Incompetence",
+        "value": 300
+    },
+    {
+        "text": "Fitness",
+        "value": 300
+    },
+    {
+        "text": "Damage",
+        "value": 800
+    }, 
+    {
+        "text": "Health",
+        "value": 600
+    },
+    {
+        "text": "Space",
+        "value": 400
+    },
+    {
+        "text": "Noise",
+        "value": 300
+    },
+    {
+        "text": "Cost",
+        "value": 400,
+        "comment": "Cost for the society"
+    },
+    {
+        "text": "Carelessness",
+        "value": 100
+    }, 
+    {
+        "text": "Drink",
+        "value": 101
+    },
+    {
+        "text": "Speed",
+        "value": 100
+    }, 
+    {
+        "text": "Entitlement",
+        "value": 100
+    },
+    {
+        "text": "Carblind",
+        "value": 100
+    }, 
+    {
+        "text": "Subsidy",
+        "value": 100
+    }
+]
