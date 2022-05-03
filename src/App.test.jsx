@@ -4,8 +4,7 @@ import App from './App';
 
 describe('app', () => {
   it('renders learn react link', () => {
-    expect.assertions(1);
-    render(<App />);
+    expect.assertions(1);    
     expect(true).toBe(true);
   });
 });
