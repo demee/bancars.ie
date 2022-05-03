@@ -25,6 +25,7 @@ export default function Tagcloud() {
       fill={(d, i) => schemeCategory10ScaleOrdinal(i)}
       rotate={0}
       padding={5}
+      random={() => 0}
     />
   );
 }
