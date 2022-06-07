@@ -75,5 +75,9 @@
     {
         "text": "Subsidy",
         "value": 100
+    },
+    {
+        "text": "Injury",
+        "value": "200"
     }
 ]

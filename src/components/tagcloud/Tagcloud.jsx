@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import WordCloud from 'react-d3-cloud';
-import { scaleOrdinal } from 'd3-scale';
-import { schemeCategory10 } from 'd3-scale-chromatic';
 import { useNavigate } from 'react-router-dom';
 
 export default function Tagcloud() {
@@ -15,8 +13,6 @@ export default function Tagcloud() {
     setWords(await wordDataResponse.json());
   }, []);
 
-  const schemeCategory10ScaleOrdinal = scaleOrdinal(schemeCategory10);
-
   return (
     <WordCloud
       width={width}
@@ -25,7 +21,7 @@ export default function Tagcloud() {
       font="Arial"
       fontSize={(word) => Math.log2(word.value) * 5}
       spiral="rectangular"
-      fill={(d, i) => schemeCategory10ScaleOrdinal(i)}
+      fill="#000"
       rotate={0}
       padding={5}
       random={() => 0}
