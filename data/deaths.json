@@ -2,6 +2,10 @@
     "data": {
         "deaths": [
             {
+                "year": 2021,
+                "deaths": 136
+            },
+            {
                 "year": 2020,
                 "deaths": 143
             },
