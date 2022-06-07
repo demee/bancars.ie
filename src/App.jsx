@@ -7,9 +7,6 @@ import TagBody from './pages/TagBody/TagBody';
 function App() {
   return (
     <div className="App">
-      <head>
-        <div className="menubar">🍔</div>
-      </head>
       <Routes>
         <Route path="/" element={<Tagcloud />} />
         <Route path="/tags/:tag" element={<TagBody />} />
