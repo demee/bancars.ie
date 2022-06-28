@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-  Grid, AppBar, Toolbar, IconButton,
+  Container,
 } from '@mui/material';
-import { Menu } from '@mui/icons-material';
+import Header from '../../components/header/Header';
 
 export default function TagBody() {
   const params = useParams();
@@ -15,17 +15,9 @@ export default function TagBody() {
   }, []);
 
   return (
-    <Grid container>
-      <Grid item xs={12}>
-        <AppBar position="static">
-          <Toolbar variant="dense">
-            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-              <Menu />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-      </Grid>
+    <Container>
+      <Header />
       {articles.map((a) => <a href={a.url} key={a.url}>{a.title}</a>)}
-    </Grid>
+    </Container>
   );
 }

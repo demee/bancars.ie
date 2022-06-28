@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  Grid, AppBar, Toolbar, IconButton,
+  Grid, Container, Divider,
 } from '@mui/material';
-import { Menu } from '@mui/icons-material';
 import { DateTime } from 'luxon';
 
 import TagCloud from '../../components/tagcloud/Tagcloud';
 import Counter from '../../components/counter/Counter';
+import Header from '../../components/header/Header';
 
 export default function Home() {
   const carCountStart = 2805839;
@@ -15,31 +15,26 @@ export default function Home() {
   const carCountDateEnd = DateTime.fromObject({ year: 2021, month: 12, day: 31 });
 
   return (
-    <Grid container>
-      <Grid item xs={12}>
-        <AppBar position="static">
-          <Toolbar variant="dense">
-            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-              <Menu />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
+    <Container>
+      <Header />
+      <Grid container>
+        <Container><h1>BAN CARS</h1></Container>
+        <Divider orientation="vertical" flexItem />
+        <Grid item xs={3}>
+          <Counter
+            startDate={carCountDateStart}
+            targetDate={carCountDateEnd}
+            startCount={carCountStart}
+            targetCount={carCountTarget}
+          />
+        </Grid>
+        <Divider orientation="vertical" flexItem />
+        <Grid item xs={3}>
+          <TagCloud />
+        </Grid>
+        <Divider orientation="vertical" flexItem />
+        <Grid />
       </Grid>
-      <Grid item xs={12}>
-        <h1>BAN CARS</h1>
-      </Grid>
-      <Grid item xs={3}>
-        <Counter
-          startDate={carCountDateStart}
-          targetDate={carCountDateEnd}
-          startCount={carCountStart}
-          targetCount={carCountTarget}
-        />
-      </Grid>
-      <Grid item xs={3}>
-        <TagCloud />
-      </Grid>
-      <Grid />
-    </Grid>
+    </Container>
   );
 }
