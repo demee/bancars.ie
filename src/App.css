@@ -1,9 +1,9 @@
-body {
-    background-color: antiquewhite;
-}
-
 .footer {
     position: absolute;
     bottom: 0;
     font-size: 10px;
+}
+
+body {
+    background-color: rgb(212, 208, 197)
 }

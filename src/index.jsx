@@ -6,18 +6,13 @@ import '@fontsource/roboto/700.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { CssBaseline } from '@mui/material';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // eslint-disable-next-line jest/require-hook
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <CssBaseline />
-      <App />
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );
