@@ -1,0 +1,11 @@
+.banner {
+    font-size: 100px;
+    font-weight: 900;    
+    text-align: center;
+    letter-spacing: 4vw;
+    line-height: 1.5em;    
+}
+
+.container {
+    border: 2px solid black;
+}

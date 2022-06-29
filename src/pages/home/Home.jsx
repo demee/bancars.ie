@@ -18,7 +18,6 @@ export default function Home() {
     <Container>
       <Header />
       <Grid container>
-        <Container><h1>BAN CARS</h1></Container>
         <Divider orientation="vertical" flexItem />
         <Grid item xs={3}>
           <Counter

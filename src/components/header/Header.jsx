@@ -1,8 +1,9 @@
 import React from 'react';
 import {
-  Grid, AppBar, Toolbar, IconButton,
+  Container, Grid, AppBar, Toolbar, IconButton,
 } from '@mui/material';
 import { Menu } from '@mui/icons-material';
+import style from './Header.module.css';
 
 export default function Header() {
   return (
@@ -15,6 +16,9 @@ export default function Header() {
             </IconButton>
           </Toolbar>
         </AppBar>
+      </Grid>
+      <Grid className={style.container} item xs={12}>
+        <Container><div className={style.banner}>BAN CARS</div></Container>
       </Grid>
     </Grid>
   );
