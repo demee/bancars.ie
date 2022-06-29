@@ -1,33 +1,11 @@
 import React from 'react';
 import { CssBaseline, GlobalStyles } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import './App.css';
 import Home from './pages/home/Home';
 import TagBody from './pages/TagBody/TagBody';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#000000',
-    },
-    secondary: {
-      main: '#504d44',
-    },
-    error: {
-      main: '#504d44',
-    },
-    warning: {
-      main: '#B5A581',
-    },
-    info: {
-      main: '#9CABB5',
-    },
-    success: {
-      main: '#A3B59C',
-    },
-  },
-});
+import defaultTheme from './themes/Default';
 
 const globalSyle = {
   body: {
@@ -37,7 +15,7 @@ const globalSyle = {
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <GlobalStyles styles={globalSyle} />
       <BrowserRouter>
