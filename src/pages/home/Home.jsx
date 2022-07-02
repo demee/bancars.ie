@@ -34,7 +34,17 @@ export default function Home() {
             <TagCloud />
           </BlackBox>
         </Grid>
-
+        <Grid item xs={12} sm={6} lg={3}>
+          <BlackBox>
+            <h1>Accidents in 2022</h1>
+          </BlackBox>
+        </Grid>
+        <Grid item xs={12} sm={6} lg={3}>
+          <BlackBox>
+            <h2>Dead in 2022</h2>
+            <h1>83</h1>
+          </BlackBox>
+        </Grid>
         <Grid />
       </Grid>
     </Container>

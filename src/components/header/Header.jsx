@@ -18,7 +18,7 @@ export default function Header() {
         </AppBar>
       </Grid>
       <Grid className={style.container} item xs={12}>
-        <Container><div className={style.banner}>BAN CARS</div></Container>
+        <Container><div className={style.banner}>&nbsp;BAN CARS</div></Container>
       </Grid>
     </Grid>
   );
