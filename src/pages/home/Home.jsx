@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-  Grid, Container, Divider,
+  Grid, Container,
 } from '@mui/material';
 import { DateTime } from 'luxon';
 
 import TagCloud from '../../components/tagcloud/Tagcloud';
 import Counter from '../../components/counter/Counter';
 import Header from '../../components/header/Header';
+import BlackBox from '../../components/blackbox/BlackBox';
 
 export default function Home() {
   const carCountStart = 2805839;
@@ -18,20 +19,22 @@ export default function Home() {
     <Container>
       <Header />
       <Grid container>
-        <Divider orientation="vertical" flexItem />
-        <Grid item xs={3}>
-          <Counter
-            startDate={carCountDateStart}
-            targetDate={carCountDateEnd}
-            startCount={carCountStart}
-            targetCount={carCountTarget}
-          />
+        <Grid item xs={12} sm={6} lg={3}>
+          <BlackBox>
+            <Counter
+              startDate={carCountDateStart}
+              targetDate={carCountDateEnd}
+              startCount={carCountStart}
+              targetCount={carCountTarget}
+            />
+          </BlackBox>
         </Grid>
-        <Divider orientation="vertical" flexItem />
-        <Grid item xs={3}>
-          <TagCloud />
+        <Grid item xs={12} sm={6} lg={3}>
+          <BlackBox>
+            <TagCloud />
+          </BlackBox>
         </Grid>
-        <Divider orientation="vertical" flexItem />
+
         <Grid />
       </Grid>
     </Container>
