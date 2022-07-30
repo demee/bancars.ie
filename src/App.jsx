@@ -9,6 +9,7 @@ import defaultTheme from './themes/Default';
 const globalSyle = {
   body: {
     backgroundColor: '#D4D0C5',
+    fontFamily: 'Montserrat Alternates',
   },
 };
 
