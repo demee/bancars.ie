@@ -31,18 +31,25 @@ export default function Home() {
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
+            <br />
+            <br />
+            <br />
             <TagCloud />
           </BlackBox>
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
-            <h1>Accidents in 2022</h1>
+            <h2>There were</h2>
+            <h1>657</h1>
+            <h2>serious</h2>
+            <h2>injuries in 2022</h2>
           </BlackBox>
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
-            <h2>Dead in 2022</h2>
-            <h1>83</h1>
+            <h2>There were</h2>
+            <h1>84</h1>
+            <h2>deaths in 2022</h2>
           </BlackBox>
         </Grid>
         <Grid />
