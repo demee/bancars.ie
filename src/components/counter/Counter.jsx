@@ -63,16 +63,10 @@ export default function Counter(props) {
     <div>
       <h2>There are</h2>
       <svg viewBox="0 0 100 25">
-        <defs>
-          <style type="text/css">
-            @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
-          </style>
-        </defs>
-        <text x="5" y="17" style={{ fontFamily: 'Yusei Magic', fontSize: '20px' }}>
+        <text x="5" y="17" style={{ fontFamily: 'Montserrat Alternates', fontSize: '20px' }}>
           <NumberFormat value={count} displayType="text" thousandSeparator renderText={(value) => value} />
           *
         </text>
-
         <rect x={100 - barWidth} y="20" width={barWidth} height="2" />
         <text x={100 - barWidth - 2} y="22" style={{ fontSize: '3px' }}>🚗</text>
         <text x={100 - barWidth + 2} y="21.5" style={{ fontSize: '2px', fill: '#fff' }}>{reason}</text>

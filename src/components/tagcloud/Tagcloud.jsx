@@ -18,7 +18,7 @@ export default function Tagcloud() {
       width={width}
       height={height}
       data={words}
-      font="Arial"
+      font="Montserrat Alternates"
       fontSize={(word) => Math.log2(word.value) * 5}
       spiral="rectangular"
       fill="#000"
