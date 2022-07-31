@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  Grid, Container,
-} from '@mui/material';
+import { Grid, Container } from '@mui/material';
 import { DateTime } from 'luxon';
-
-import TagCloud from '../../components/tagcloud/Tagcloud';
 import Counter from '../../components/counter/Counter';
 import Header from '../../components/header/Header';
 import BlackBox from '../../components/blackbox/BlackBox';
@@ -31,10 +27,9 @@ export default function Home() {
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
-            <br />
-            <br />
-            <br />
-            <TagCloud />
+            <h2>Cars produced</h2>
+            <h1>6.3 Mt CO2eq</h1>
+            <h2>so far this year</h2>
           </BlackBox>
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
