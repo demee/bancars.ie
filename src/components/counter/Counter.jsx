@@ -43,8 +43,8 @@ export default function Counter(props) {
 }
 
 Counter.propTypes = {
-  startDate: PropTypes.string.isRequired,
-  targetDate: PropTypes.string.isRequired,
+  startDate: PropTypes.instanceOf(DateTime).isRequired,
+  targetDate: PropTypes.instanceOf(DateTime).isRequired,
   targetCount: PropTypes.number.isRequired,
   startCount: PropTypes.number,
 };
