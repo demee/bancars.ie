@@ -3,7 +3,8 @@ import { Box, CssBaseline, GlobalStyles } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import Home from './pages/home/Home';
-import TagBody from './pages/TagBody/TagBody';
+import Blog from './pages/blog/Blog';
+import Articles from './pages/articles/Articles';
 import defaultTheme from './themes/Default';
 
 const globalSyle = {
@@ -25,7 +26,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/tags/:tag" element={<TagBody />} />
+            <Route path="/articles/" element={<Articles />} />
+            <Route path="/blog/" element={<Blog />} />
           </Routes>
         </BrowserRouter>
       </Box>
