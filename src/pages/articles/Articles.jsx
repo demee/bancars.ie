@@ -5,7 +5,7 @@ import {
 } from '@mui/material';
 import Header from '../../components/header/Header';
 
-export default function TagBody() {
+export default function Articles() {
   const params = useParams();
   const [articles, setArticles] = useState([]);
   useEffect(async () => {
