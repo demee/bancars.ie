@@ -9,3 +9,8 @@
 .container {
     border: 2px solid black;
 }
+
+.drawer {
+    background-color: #D4D0C5;
+    height: 100%;
+}

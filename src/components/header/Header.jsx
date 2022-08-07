@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
 import {
-  Container, Grid, AppBar, Toolbar, IconButton, Drawer, Box, ListItem, Divider,
+  Container,
+  Grid,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Drawer,
+  Box,
+  ListItemButton,
+  Divider,
+  ListItemIcon,
+  ListItemText,
 } from '@mui/material';
-import { Menu, Close } from '@mui/icons-material';
+import { Menu, Newspaper, Close, Book, QuestionMark } from '@mui/icons-material';
 import style from './Header.module.css';
 
 export default function Header() {
@@ -41,21 +51,25 @@ export default function Header() {
         open={drawerOpen}
         onClose={toggleDrawer(false)}
       >
-        <Box>
-          <IconButton sx={{ mb: 2 }} onClick={toggleDrawer(false)}>
-            <Close />
-          </IconButton>
-
-          <Divider sx={{ mb: 2 }} />
-          <ListItem>
-            In the news
-          </ListItem>
-          <ListItem>
-            Blog
-          </ListItem>
-          <ListItem>
-            About
-          </ListItem>
+        <Box className={style.drawer}>
+          <ListItemButton>
+            <ListItemIcon>
+              <Newspaper sx={{ color: 'primary.main' }} />
+            </ListItemIcon>
+            <ListItemText primary="In the news" />
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon>
+              <Book sx={{ color: 'primary.main' }} />
+            </ListItemIcon>
+            <ListItemText primary="Blog" />
+          </ListItemButton>
+          <ListItemButton>
+            <ListItemIcon>
+              <QuestionMark sx={{ color: 'primary.main' }} />
+            </ListItemIcon>
+            <ListItemText primary="About" />
+          </ListItemButton>
         </Box>
       </Drawer>
 
