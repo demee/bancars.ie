@@ -69,6 +69,6 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-testing-library": "^5.1.0",
-    "react-codemod": "^4.0.1"
+    "react-codemod": "^5.4.3"
   }
 }
