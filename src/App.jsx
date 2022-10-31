@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import Home from './pages/home/Home';
 import Blog from './pages/blog/Blog';
 import Articles from './pages/articles/Articles';
+import About from './pages/about/About';
 import defaultTheme from './themes/Default';
 
 const globalSyle = {
@@ -26,8 +27,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/articles/" element={<Articles />} />
-            <Route path="/blog/" element={<Blog />} />
+            <Route path="/news" element={<Articles />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </BrowserRouter>
       </Box>

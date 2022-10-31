@@ -18,6 +18,7 @@ import {
   Book,
   QuestionMark,
 } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import style from './Header.module.css';
 
 export default function Header() {
@@ -57,30 +58,38 @@ export default function Header() {
         onClose={toggleDrawer(false)}
       >
         <Box className={style.drawer}>
-          <ListItemButton>
-            <ListItemIcon>
-              <Home sx={{ color: 'primary.main' }} />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemIcon>
-              <Newspaper sx={{ color: 'primary.main' }} />
-            </ListItemIcon>
-            <ListItemText primary="In the news" />
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemIcon>
-              <Book sx={{ color: 'primary.main' }} />
-            </ListItemIcon>
-            <ListItemText primary="Blog" />
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemIcon>
-              <QuestionMark sx={{ color: 'primary.main' }} />
-            </ListItemIcon>
-            <ListItemText primary="About" />
-          </ListItemButton>
+          <Link class={style.link} to="/">
+            <ListItemButton>
+              <ListItemIcon>
+                <Home sx={{ color: 'primary.main' }} />
+              </ListItemIcon>
+              <ListItemText primary="Home" />
+            </ListItemButton>
+          </Link>
+          <Link class={style.link} to="/news">
+            <ListItemButton>
+              <ListItemIcon>
+                <Newspaper sx={{ color: 'primary.main' }} />
+              </ListItemIcon>
+              <ListItemText primary="In the news" />
+            </ListItemButton>
+          </Link>
+          <Link class={style.link} to="/blog">
+            <ListItemButton>
+              <ListItemIcon>
+                <Book sx={{ color: 'primary.main' }} />
+              </ListItemIcon>
+              <ListItemText primary="Blog" />
+            </ListItemButton>
+          </Link>
+          <Link class={style.link} to="/about">
+            <ListItemButton>
+              <ListItemIcon>
+                <QuestionMark sx={{ color: 'primary.main' }} />
+              </ListItemIcon>
+              <ListItemText primary="About" />
+            </ListItemButton>
+          </Link>
         </Box>
       </Drawer>
 
