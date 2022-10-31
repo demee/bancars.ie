@@ -8,6 +8,7 @@ export default function Blog() {
   return (
     <Container>
       <Header />
+      Storis to continue.
     </Container>
   );
 }
