@@ -12,6 +12,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import {
+  Home,
   Menu,
   Newspaper,
   Book,
@@ -47,7 +48,7 @@ export default function Header() {
           </AppBar>
         </Grid>
         <Grid className={style.container} item xs={12}>
-          <Container><div className={style.banner}>&nbsp;BAN CARS</div></Container>
+          <Container><div className={style.banner}>BAN CARS</div></Container>
         </Grid>
       </Grid>
       <Drawer
@@ -56,6 +57,12 @@ export default function Header() {
         onClose={toggleDrawer(false)}
       >
         <Box className={style.drawer}>
+          <ListItemButton>
+            <ListItemIcon>
+              <Home sx={{ color: 'primary.main' }} />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItemButton>
           <ListItemButton>
             <ListItemIcon>
               <Newspaper sx={{ color: 'primary.main' }} />
