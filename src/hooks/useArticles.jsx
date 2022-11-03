@@ -8,4 +8,4 @@ export default function useArticles() {
   }, []);
 
   return articles;
-};
+}
