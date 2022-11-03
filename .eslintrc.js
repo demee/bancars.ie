@@ -1,4 +1,4 @@
-{
+module.exports = {
     "env": {
         "browser": true,
         "es2021": true,
@@ -22,5 +22,10 @@
     ],
     "rules": {
         "import/no-cycle": ["error", { "maxDepth": "∞" }]
-    }
+    },
+    "settings": {
+        "jest": {
+          "version": require('jest/package.json').version,
+        },
+      },
 }

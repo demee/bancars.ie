@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { DateTime, Interval } from 'luxon';
 import PropTypes from 'prop-types';
-import NumberFormat from 'react-number-format';
+import { NumericFormat } from 'react-number-format';
 
 import './Counter.css';
 
@@ -35,7 +35,7 @@ export default function Counter(props) {
   return (
     <div>
       <h2>There are</h2>
-      <h1><NumberFormat value={count} displayType="text" thousandSeparator renderText={(value) => value} /></h1>
+      <h1><NumericFormat value={count} displayType="text" thousandSeparator renderText={(value) => value} /></h1>
       <h2>cars too many on irish roads, #bancars</h2>
       <span style={{ float: 'left', marginLeft: '10px' }}>* - estimated</span>
     </div>
