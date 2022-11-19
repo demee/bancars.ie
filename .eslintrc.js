@@ -1,7 +1,5 @@
 const jestPackage = require('react-scripts/node_modules/jest/package.json');
 
-console.log("Jest version: ", jestPackage.version)
-
 module.exports = {
   env: {
     browser: true,
@@ -9,9 +7,11 @@ module.exports = {
     'jest/globals': true,
   },
   extends: [
-    'plugin:jest/all',
-    'plugin:react/all',
+    'plugin:jest/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'airbnb',
+    'eslint:recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -22,6 +22,7 @@ module.exports = {
   },
   plugins: [
     'react',
+    'react-hooks',
     'jest',
   ],
   rules: {
@@ -32,4 +33,12 @@ module.exports = {
       version: jestPackage.version,
     },
   },
+  overrides: [
+    {
+      files: ['src/**.test.jsx'],
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
+      rules: { 'jest/prefer-expect-assertions': 'off' },
+    },
+  ],
 };

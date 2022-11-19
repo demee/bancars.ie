@@ -6,13 +6,16 @@ import {
 } from '@mui/material';
 import Header from '../../components/header/Header';
 
+async function fetchArticles() {
+  const articlesResponse = await fetch('/data/articles.json');
+  const articleData = await articlesResponse.json();
+  return articleData();
+}
+
 export default function Articles() {
   const [articles, setArticles] = useState([]);
-  useEffect(async () => {
-    const articlesResponse = await fetch('/data/articles.json');
-    const articleData = await articlesResponse.json();
-    setArticles(articleData);
-  }, []);
+
+  useEffect(() => { (async () => setArticles(await fetchArticles()))(); }, []);
 
   return (
     <Container>
