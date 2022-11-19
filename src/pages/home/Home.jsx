@@ -4,6 +4,7 @@ import { DateTime } from 'luxon';
 import Counter from '../../components/counter/Counter';
 import Header from '../../components/header/Header';
 import BlackBox from '../../components/blackbox/BlackBox';
+import Footer from '../../components/footer/Footer';
 
 export default function Home() {
   const carCountStart = 2805839;
@@ -49,6 +50,7 @@ export default function Home() {
         </Grid>
         <Grid />
       </Grid>
+      <Grid><Footer /></Grid>
     </Container>
   );
 }

@@ -49,7 +49,14 @@ export default function Header() {
           </AppBar>
         </Grid>
         <Grid className={style.container} item xs={12}>
-          <Container><div className={style.banner}>BAN CARS</div></Container>
+          <Container>
+            <div className={style.banner}>
+              <span className={style.bannerText}>
+                BAN CARS
+              </span>
+              <sup>*, **</sup>
+            </div>
+          </Container>
         </Grid>
       </Grid>
       <Drawer

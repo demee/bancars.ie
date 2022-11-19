@@ -37,7 +37,6 @@ export default function Counter(props) {
       <h2>There are</h2>
       <h1><NumericFormat value={count} displayType="text" thousandSeparator renderText={(value) => value} /></h1>
       <h2>cars too many on irish roads, #bancars</h2>
-      <span style={{ float: 'left', marginLeft: '10px' }}>* - estimated</span>
     </div>
   );
 }

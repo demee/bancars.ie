@@ -1,9 +1,12 @@
-.banner {
+.bannerText {
     font-size: 2vh;
     font-weight: 900;    
-    text-align: center;
     letter-spacing: 4vw;
     line-height: 1.5em;    
+}
+
+.banner {
+    text-align: center;
 }
 
 .container {
