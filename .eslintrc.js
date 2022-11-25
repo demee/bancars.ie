@@ -1,4 +1,4 @@
-const jestPackage = require('react-scripts/node_modules/jest/package.json');
+const jestPackage = require('jest/package.json');
 
 module.exports = {
   env: {

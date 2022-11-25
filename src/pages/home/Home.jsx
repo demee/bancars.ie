@@ -5,6 +5,8 @@ import Counter from '../../components/counter/Counter';
 import Header from '../../components/header/Header';
 import BlackBox from '../../components/blackbox/BlackBox';
 import Footer from '../../components/footer/Footer';
+import Chart from '../../components/chart/Chart';
+import styles from './Home.module.css';
 
 export default function Home() {
   const carCountStart = 2805839;
@@ -15,6 +17,15 @@ export default function Home() {
   return (
     <Container>
       <Header />
+      <Grid container>
+        <Grid item xs={12} sm={12} lg={12}>
+          <BlackBox>
+            <div className={styles.chartContainer}>
+              <Chart />
+            </div>
+          </BlackBox>
+        </Grid>
+      </Grid>
       <Grid container>
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
@@ -29,14 +40,14 @@ export default function Home() {
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
             <h2>Cars produced</h2>
-            <h1>6.3 Mt CO2eq</h1>
+            <h1>12 Mt CO2eq</h1>
             <h2>so far this year</h2>
           </BlackBox>
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
             <h2>There were</h2>
-            <h1>657</h1>
+            <h1>{141 * 9}</h1>
             <h2>serious</h2>
             <h2>injuries in 2022</h2>
           </BlackBox>

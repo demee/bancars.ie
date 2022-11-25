@@ -6,7 +6,7 @@ describe('chart', () => {
   it('should renders a chart', async () => {
     expect.assertions(1);
     render(<Chart />);
-    const elements = await screen.findAllByTestId('custom-element');
+    const elements = await screen.findAllByTestId();
     expect(elements).toHaveLength(1);
   });
 });
