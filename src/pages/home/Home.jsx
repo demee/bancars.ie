@@ -44,7 +44,7 @@ export default function Home() {
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
             <h2>There were</h2>
-            <h1>118</h1>
+            <h1>141</h1>
             <h2>deaths in 2022</h2>
           </BlackBox>
         </Grid>
