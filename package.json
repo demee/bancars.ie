@@ -1,6 +1,6 @@
 {
   "name": "bancars",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "homepage": "https://bancars.ie/",
   "dependencies": {
@@ -32,32 +32,6 @@
     "web-vitals": "^3.1.0",
     "usehooks-ts": "^2.9.1"
   },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@types/luxon": "^3.0.3",
     "@types/react": "^18.0.25",
@@ -73,5 +47,31 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-testing-library": "^5.1.0",
     "react-codemod": "^5.4.3"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --coverage"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version"
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": ["<rootDir>/node_modules/(?!(d3|internmap|delaunator|robust-predicates))"]
   }
 }
