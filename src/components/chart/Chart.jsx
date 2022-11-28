@@ -50,7 +50,7 @@ export default function Chart() {
                 className={styles.axisText}
                 x={xScale(d.year) + 5}
                 y={pos}
-                key={d.count}
+                key={d.count * pos}
               >
                 🚘
               </text>,
