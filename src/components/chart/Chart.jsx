@@ -16,8 +16,12 @@ export default function Chart() {
   if (data && !error) {
     const years = data.data.map((d) => d.year);
     const count = data.data.map((d) => d.count);
-    const xScale = scaleLinear().domain([min(years), max(years)]).range([marginLeft, width]);
-    const yScale = scaleLinear().domain([min(count), max(count)]).range([height - marginBottom, 0]);
+    const minYears = min(years);
+    const minCount = min(count);
+    const maxYears = max(years);
+    const maxCount = max(count);
+    const xScale = scaleLinear().domain([minYears, maxYears]).range([marginLeft, width]);
+    const yScale = scaleLinear().domain([minCount, maxCount]).range([height - marginBottom, 0]);
     const xTicks = xScale.ticks(years.length);
     const yTicks = yScale.ticks();
     return (
@@ -37,16 +41,24 @@ export default function Chart() {
             {t}
           </text>
         ))}
-        {data.data.map((d) => (
-          <text
-            className={styles.axisText}
-            x={xScale(d.year)}
-            y={yScale(d.count)}
-            key={d.count}
-          >
-            🚘
-          </text>
-        ))}
+        {data.data.map((d) => {
+          const carStack = [];
+          let pos = yScale(minCount) + 10;
+          while (yScale(d.count) < pos) {
+            carStack.push(
+              <text
+                className={styles.axisText}
+                x={xScale(d.year) + 5}
+                y={pos}
+                key={d.count}
+              >
+                🚘
+              </text>,
+            );
+            pos -= 10;
+          }
+          return carStack;
+        })}
       </svg>
     );
   }

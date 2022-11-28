@@ -1,7 +1,13 @@
 .bannerText {
-    font-size: 2vh;
+    font-size: 2vw;
     font-weight: 900;    
     letter-spacing: 4vw;
+    line-height: 1.5em;    
+}
+
+.bannerAsterix {
+    font-size: 2vw;
+    font-weight: 900;    
     line-height: 1.5em;    
 }
 

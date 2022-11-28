@@ -54,7 +54,7 @@ export default function Header() {
               <span className={style.bannerText}>
                 BAN CARS
               </span>
-              <sup>*, **</sup>
+              <sup className={style.bannerAsterix}>*, **</sup>
             </div>
           </Container>
         </Grid>
