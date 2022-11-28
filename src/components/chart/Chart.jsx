@@ -3,6 +3,7 @@ import {
   max, min, scaleLinear,
 } from 'd3';
 import { useFetch } from 'usehooks-ts';
+import styles from './Chart.module.css';
 
 const width = 800;
 const height = 300;
@@ -17,17 +18,35 @@ export default function Chart() {
     const count = data.data.map((d) => d.count);
     const xScale = scaleLinear().domain([min(years), max(years)]).range([marginLeft, width]);
     const yScale = scaleLinear().domain([min(count), max(count)]).range([height - marginBottom, 0]);
-    const xTicks = xScale.ticks();
+    const xTicks = xScale.ticks(years.length);
     const yTicks = yScale.ticks();
     return (
       <svg viewBox={viewBox}>
         {xTicks.map((t) => (
-          <text x={xScale(t)} y={height} key={t}>
+          <text className={styles.axisText} x={xScale(t)} y={height} key={t}>
             {t}
           </text>
         ))}
-        {yTicks.map((t) => <text x={0} y={yScale(t)} key={t}>{t}</text>)}
-        {data.data.map((d) => <text x={xScale(d.year)} y={yScale(d.count)} key={d.count}>🚘</text>)}
+        {yTicks.map((t) => (
+          <text
+            className={styles.axisText}
+            x={0}
+            y={yScale(t)}
+            key={t}
+          >
+            {t}
+          </text>
+        ))}
+        {data.data.map((d) => (
+          <text
+            className={styles.axisText}
+            x={xScale(d.year)}
+            y={yScale(d.count)}
+            key={d.count}
+          >
+            🚘
+          </text>
+        ))}
       </svg>
     );
   }
