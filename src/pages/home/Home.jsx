@@ -40,14 +40,14 @@ export default function Home() {
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
             <h2>Cars produced</h2>
-            <h1>12 Mt CO2eq</h1>
-            <h2>so far this year</h2>
+            <h1>24 Mt CO2eq</h1>
+            <h2>in 2022</h2>
           </BlackBox>
         </Grid>
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
             <h2>There were</h2>
-            <h1>{152 * 9}</h1>
+            <h1>{156 * 9}</h1>
             <h2>serious</h2>
             <h2>injuries in 2022</h2>
           </BlackBox>
@@ -55,7 +55,7 @@ export default function Home() {
         <Grid item xs={12} sm={6} lg={3}>
           <BlackBox>
             <h2>There were</h2>
-            <h1>152</h1>
+            <h1>156</h1>
             <h2>deaths in 2022</h2>
           </BlackBox>
         </Grid>
